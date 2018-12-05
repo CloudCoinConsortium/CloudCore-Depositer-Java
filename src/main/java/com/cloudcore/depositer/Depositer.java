@@ -40,7 +40,7 @@ public class Depositer {
         try {
             createDirectories();
             CommandUtil.saveCommand(CommandUtil.makeCommand());
-            CoinUtil.createDummyCoin();
+            //CoinUtil.createDummyCoin();
         } catch (IOException ex) {
             Logger.getLogger(Depositer.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -66,7 +66,7 @@ public class Depositer {
 
         KeyboardReader reader = new KeyboardReader();
 
-        // Ask for Bacck up.
+        // Ask for Deposit Coins.
         System.out.println("Do you want to deposit your CloudCoin?");
         System.out.println("1 => Deposit");
         System.out.println("2 => Exit");
@@ -145,8 +145,8 @@ public class Depositer {
 
                 JSONObject jsonObject = new JSONObject(fullResponse);
 
-                if (jsonObject.has("cloudcore")) {
-                    JSONArray jsonArray = jsonObject.getJSONArray("cloudcore");
+                if (jsonObject.has("cloudcoin")) {
+                    JSONArray jsonArray = jsonObject.getJSONArray("cloudcoin");
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject jObj = jsonArray.getJSONObject(i);
                         saveCoinFile(exportcoin(jObj.toString()), jObj.getInt("sn"), getDenomination(jObj.getInt("sn")));
@@ -188,7 +188,7 @@ public class Depositer {
 
     public static byte[] exportcoin(String coin) {
         return ("{\n"
-                + "  \"cloudcore\": [\n"
+                + "  \"cloudcoin\": [\n"
                 + coin
                 + "  ]\n"
                 + "}").getBytes();

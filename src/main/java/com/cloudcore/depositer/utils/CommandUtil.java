@@ -26,14 +26,14 @@ public class CommandUtil {
     public static byte[] makeCommand() {
         return ("{\n"
                 + "      \"command\": \"getDeposit\",\n"
-                + "      \"bankURL\": \"https://raida0.cloudcore.global/service/\",\n"
+                + "      \"bankURL\": \"https://raida0.cloudcoin.global/service/\",\n"
                 + "      \"account\": \"default\",\n"
                 + "      \"ID\": \"default\",\n"
                 + "      \"moveTo\": \"Import" + "\"\n"
                 + "}").getBytes();
     }
 // for dummy response
-   /* public static byte[] makeCommand() {
+    /*public static byte[] makeCommand() {
         return ("{\n"
                 + "      \"command\": \"getDeposit\",\n"
                 + "      \"bankURL\": \"http://cloudcoinconsortium.org/retrieve\",\n"

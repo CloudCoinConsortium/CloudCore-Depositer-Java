@@ -37,7 +37,7 @@ public class CoinUtil {
 
     public static byte[] makeCloudCoin(int sn) {
         return ("{\n"
-                + "  \"cloudcore\": [\n"
+                + "  \"cloudcoin\": [\n"
                 + "    {\n"
                 + "      \"nn\": 1,\n"
                 + "      \"sn\": " + sn + ",\n"

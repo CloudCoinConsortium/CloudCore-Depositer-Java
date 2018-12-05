@@ -17,7 +17,7 @@ import java.util.List;
 @SuppressWarnings({"ALL", "unused"})
 public class Response {
 
-    @SerializedName("cloudcore")
+    @SerializedName("cloudcoin")
     @Expose
     private List<Cloudcoin> cloudcoin = null;
 
