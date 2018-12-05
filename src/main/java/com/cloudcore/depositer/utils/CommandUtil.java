@@ -3,15 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.cloudcoin.depositer.utils;
+package com.cloudcore.depositer.utils;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-import static com.cloudcoin.depositer.Depositer.CommandFolder;
-
-
+import static com.cloudcore.depositer.Depositer.CommandFolder;
 
 /**
  *
@@ -28,7 +26,7 @@ public class CommandUtil {
     public static byte[] makeCommand() {
         return ("{\n"
                 + "      \"command\": \"getDeposit\",\n"
-                + "      \"bankURL\": \"https://raida0.cloudcoin.global/service/\",\n"
+                + "      \"bankURL\": \"https://raida0.cloudcore.global/service/\",\n"
                 + "      \"account\": \"default\",\n"
                 + "      \"ID\": \"default\",\n"
                 + "      \"moveTo\": \"Import" + "\"\n"

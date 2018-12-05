@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.cloudcoin.depositer.utils;
+package com.cloudcore.depositer.utils;
 
 
 
 
-import com.cloudcoin.depositer.Depositer;
+import com.cloudcore.depositer.Depositer;
 
 import java.io.BufferedReader;
 import java.io.File;

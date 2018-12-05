@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.cloudcoin.depositer;
+package com.cloudcore.depositer;
 
 
 import java.io.File;
@@ -15,7 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
-import com.cloudcoin.depositer.utils.*;
+import com.cloudcore.depositer.utils.*;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.concurrent.ExecutionException;
@@ -75,7 +75,7 @@ public class Depositer {
 
         if (userChoice < 1 || userChoice > 1) {
             if (userChoice == 2) {
-                System.out.println("User have cancel deposit proecess. Exiting...");
+                System.out.println("User have cancel deposit process. Exiting...");
             } else {
                 System.out.println("invalid Choice. No CloudCoins were deposited. Exiting...");
             }
@@ -134,7 +134,7 @@ public class Depositer {
      */
     public void getTicket(int nn, int sn, String an, int d) throws InterruptedException, ExecutionException {
         CompletableFuture.supplyAsync(() -> {
-            Bank_URL = Bank_URL + "get_ticket?nn=" + nn + "&sn=" + sn + "&an=" + an + "&pan=" + an + "&denomination=" + d;
+           Bank_URL = Bank_URL + "get_ticket?nn=" + nn + "&sn=" + sn + "&an=" + an + "&pan=" + an + "&denomination=" + d;
 
             long before = System.currentTimeMillis();
 
@@ -145,8 +145,8 @@ public class Depositer {
 
                 JSONObject jsonObject = new JSONObject(fullResponse);
 
-                if (jsonObject.has("cloudcoin")) {
-                    JSONArray jsonArray = jsonObject.getJSONArray("cloudcoin");
+                if (jsonObject.has("cloudcore")) {
+                    JSONArray jsonArray = jsonObject.getJSONArray("cloudcore");
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject jObj = jsonArray.getJSONObject(i);
                         saveCoinFile(exportcoin(jObj.toString()), jObj.getInt("sn"), getDenomination(jObj.getInt("sn")));
@@ -188,7 +188,7 @@ public class Depositer {
 
     public static byte[] exportcoin(String coin) {
         return ("{\n"
-                + "  \"cloudcoin\": [\n"
+                + "  \"cloudcore\": [\n"
                 + coin
                 + "  ]\n"
                 + "}").getBytes();

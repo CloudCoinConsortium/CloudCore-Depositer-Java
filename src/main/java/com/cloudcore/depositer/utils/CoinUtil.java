@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.cloudcoin.depositer.utils;
+package com.cloudcore.depositer.utils;
 
 
 import java.io.File;
@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-import static com.cloudcoin.depositer.Depositer.*;
+import static com.cloudcore.depositer.Depositer.*;
 
 
 /**
@@ -37,7 +37,7 @@ public class CoinUtil {
 
     public static byte[] makeCloudCoin(int sn) {
         return ("{\n"
-                + "  \"cloudcoin\": [\n"
+                + "  \"cloudcore\": [\n"
                 + "    {\n"
                 + "      \"nn\": 1,\n"
                 + "      \"sn\": " + sn + ",\n"

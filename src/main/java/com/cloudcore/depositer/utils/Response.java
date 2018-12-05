@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.cloudcoin.depositer.utils;
+package com.cloudcore.depositer.utils;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -17,7 +17,7 @@ import java.util.List;
 @SuppressWarnings({"ALL", "unused"})
 public class Response {
 
-    @SerializedName("cloudcoin")
+    @SerializedName("cloudcore")
     @Expose
     private List<Cloudcoin> cloudcoin = null;
 
