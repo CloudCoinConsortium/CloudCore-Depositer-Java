@@ -7,6 +7,7 @@ package com.cloudcore.depositer.utils;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -14,12 +15,11 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 /**
- *
  * @author neeraj
  */
 public class Utils {
-    
-        public static int milliSecondsToTimeOutDetect = 2000;
+
+    public static int milliSecondsToTimeOutDetect = 20000;
 
     /**
      * Creates a Gson object, a JSON parser for converting JSON Strings and objects.
@@ -37,9 +37,13 @@ public class Utils {
         String data = "";
 
         try {
+
             URL url = new URL(urlAddress);
             HttpURLConnection connect = (HttpURLConnection) url.openConnection();
             connect.setConnectTimeout(milliSecondsToTimeOutDetect);
+            connect.setRequestMethod("GET");
+            connect.setRequestProperty("Content-Type", "application/json");
+            connect.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36");
             if (200 != connect.getResponseCode())
                 return data;
 
